@@ -18,12 +18,14 @@ The recommended way to install Python CLI tools globally is using `pipx`:
 pipx install cmdgen-ai-cli
 ```
 
-*(Alternatively, you can `pip install cmdgen-ai-cli` in a virtual environment)*
+*(Alternatively, you can `pip install cmdgen-ai-cli` in a virtual environment or cmd run as administrator)*
 
 ## Upgrade
 
+Run in a virtual environment or cmd (run as administrator)
+
 ```bash
-pipx upgrade cmdgen-ai-cli
+pip install --upgrade cmdgen-ai-cli
 ```
 
 ## Quick Start
