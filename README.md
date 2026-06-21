@@ -20,6 +20,12 @@ pipx install cmdgen-ai-cli
 
 *(Alternatively, you can `pip install cmdgen-ai-cli` in a virtual environment)*
 
+## Upgrade
+
+```bash
+pipx upgrade cmdgen-ai-cli
+```
+
 ## Quick Start
 
 1. **Get an API Key:** Get a free Gemini API key from [Google AI Studio](https://aistudio.google.com/app/apikey).
