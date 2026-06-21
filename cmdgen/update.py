@@ -13,8 +13,8 @@ console = Console()
 
 # We cache the update check in the config directory
 UPDATE_CACHE_FILE = CONFIG_DIR / "update_check.json"
-CACHE_TTL = 86400  # 24 hours in seconds
-PACKAGE_NAME = "cmdgen"
+CACHE_TTL = 43200  # 12 hours in seconds
+PACKAGE_NAME = "cmdgen-ai-cli"
 
 # Fallback version for development
 def get_current_version() -> str:
@@ -52,7 +52,7 @@ def check_for_updates() -> None:
         # Simple string comparison (this works well enough for simple semver like 0.1.0 vs 0.2.0)
         # We don't want to add a `packaging` dependency just for this.
         if latest_version and latest_version != current:
-            console.print(f"[bold yellow]💡 A new version of cmdgen ({latest_version}) is available! Run `pipx upgrade cmdgen` to update.[/bold yellow]")
+            console.print(f"[bold yellow]💡 A new version of cmdgen ({latest_version}) is available! Run `pip install --upgrade cmdgen-ai-cli` to update.[/bold yellow]")
             
         # Update cache
         UPDATE_CACHE_FILE.parent.mkdir(parents=True, exist_ok=True)

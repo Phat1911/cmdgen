@@ -95,8 +95,15 @@ def config_view():
 
 def cli_main():
     import sys
+    
+    # Intercept version flags
+    if "--version" in sys.argv or "-v" in sys.argv:
+        from cmdgen.update import get_current_version
+        console.print(f"cmdgen-ai-cli version: [bold cyan]{get_current_version()}[/bold cyan]")
+        return
+        
     # If the first argument is not a known subcommand or flag, default to "generate"
-    if len(sys.argv) > 1 and sys.argv[1] not in ["config", "generate", "--help", "-h", "--version"]:
+    if len(sys.argv) > 1 and sys.argv[1] not in ["config", "generate", "--help", "-h", "--version", "-v"]:
         sys.argv.insert(1, "generate")
     app()
 
